@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iSpy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMT-aa-4wg">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo" translatesAutoresizingMaskIntoConstraints="NO" id="cCw-EL-ejD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cCw-EL-ejD" firstAttribute="centerY" secondItem="zMT-aa-4wg" secondAttribute="centerY" id="RfB-7B-ViF"/>
+                                    <constraint firstAttribute="bottom" secondItem="cCw-EL-ejD" secondAttribute="bottom" id="ZgS-7k-EXd"/>
+                                    <constraint firstAttribute="trailing" secondItem="cCw-EL-ejD" secondAttribute="trailing" id="aBd-m8-ymJ"/>
+                                    <constraint firstItem="cCw-EL-ejD" firstAttribute="leading" secondItem="zMT-aa-4wg" secondAttribute="leading" id="i64-U1-TN6"/>
+                                    <constraint firstItem="cCw-EL-ejD" firstAttribute="centerX" secondItem="zMT-aa-4wg" secondAttribute="centerX" id="nLc-b8-RsB"/>
+                                    <constraint firstItem="cCw-EL-ejD" firstAttribute="top" secondItem="zMT-aa-4wg" secondAttribute="top" id="pRj-6U-gia"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zMT-aa-4wg" secondAttribute="trailing" id="1en-gs-K2t"/>
+                            <constraint firstItem="zMT-aa-4wg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KMK-ha-BXe"/>
+                            <constraint firstItem="zMT-aa-4wg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aCI-N2-WV7"/>
+                            <constraint firstItem="zMT-aa-4wg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cRz-ye-ba8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="cCw-EL-ejD" id="Bs4-Fx-hTj"/>
+                        <outlet property="scroll" destination="zMT-aa-4wg" id="Hj4-Fu-9Te"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fondo" width="750" height="1334"/>
+    </resources>
+</document>
