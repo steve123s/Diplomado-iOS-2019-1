@@ -1,9 +1,11 @@
+// App para hacer un zoom usando scrollView
 //
 //  ViewController.swift
 //  iSpy
 //
 //  Created by Servicio Esteban  on 30/08/18.
 //  Copyright © 2018 Servicio Esteban . All rights reserved.
+//
 //
 
 import UIKit
@@ -28,10 +30,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
 
     func updateZoomFor(size: CGSize) {
-        let widthScale = size.width / image.bounds.width
-        let heightScale = size.height / image.bounds.height
-        let scale = min(widthScale, heightScale)
-        scroll.minimumZoomScale = scale
+        let widthScale = image.bounds.width
+        let heightScale = image.bounds.height
+        scroll.maximumZoomScale = max(widthScale*10, heightScale*10)
     }
     
     override func didReceiveMemoryWarning() {
