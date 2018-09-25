@@ -50,19 +50,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                                          style: .cancel, handler: nil)
             alertController.addAction(cancelAction)
         
-        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { action in
-            print("User selected Camera action")
-            imagePicker.sourceType = .camera
-            self.present(imagePicker, animated: true, completion: nil)
-            })
-            alertController.addAction(cameraAction)
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { action in
+                print("User selected Camera action")
+                imagePicker.sourceType = .camera
+                self.present(imagePicker, animated: true, completion: nil)
+                })
+                alertController.addAction(cameraAction)
+        } else {
+            print("No camera available.")
+        }
         
-        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: { action in
-            print("User selected Photo Library action")
-            imagePicker.sourceType = .photoLibrary
-            self.present(imagePicker, animated: true, completion: nil)
-            })
-            alertController.addAction(photoLibraryAction)
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: { action in
+                print("User selected Photo Library action")
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
+                })
+                alertController.addAction(photoLibraryAction)
+        } else {
+            print("No Photo Library available.")
+        }
         
         
         alertController.popoverPresentationController?.sourceView =
